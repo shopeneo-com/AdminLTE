@@ -83,3 +83,28 @@
     }
   }
 }
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  background: $primary;
+  color: $white;
+}
+
+.dataTables_wrapper a.btn {
+  min-width: 40px;
+  padding: 10px;
+  height: 100%;
+
+  i {
+    font-size: 15px;
+  }
+}
+
+.filter-bar {
+  margin-bottom: 5%;
+}
+
+.table {
+  margin: 1rem 0 !important;
+}

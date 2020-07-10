@@ -1,0 +1,163 @@
+$color-white: #fff;
+$color-black: #000;
+
+$transition-time: 250ms;
+$transition-method: ease-in-out;
+
+$card-height: 440px;
+$card-width: 100%;
+$card-hover-offset-x: 40px;
+$card-hover-offset-y: 60px;
+
+.card-movie-wrapper {
+  box-shadow: 0px 0px 100px 25px rgba($color-black, 0.2);
+  height: $card-height;
+  position: relative;
+  width: $card-width;
+
+  &:hover {
+
+    .card-movie-carousel {
+      -webkit-transition: all $transition-time $transition-method;
+      -moz-transition: all $transition-time $transition-method;
+      transition: all $transition-time $transition-method;
+      bottom: $card-hover-offset-y;
+      right: $card-hover-offset-x;
+    }
+    // .card-movie-carousel
+
+  }
+  // &:hover
+
+}
+
+.card-movie-carousel {
+  -webkit-transition: all $transition-time $transition-method 250ms;
+  -moz-transition: all $transition-time $transition-method 250ms;
+  transition: all $transition-time $transition-method 250ms;
+  height: $card-height;
+  width: $card-width;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.card-movie-navigation {
+  background-color: $color-white;
+  bottom: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 15;
+
+  a {
+    $arrow-size: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    bottom: 0;
+    color: #aac8ca;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: $card-hover-offset-y;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    right: $card-hover-offset-x;
+
+    &:after {
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border-bottom: $arrow-size solid transparent;
+      border-left: $arrow-size solid #dce9e9;
+      border-top: $arrow-size solid transparent;
+      content: '';
+      height: 0;
+      margin-right: $arrow-size;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      width: 0;
+    }
+    // &:after
+  }
+  // button
+
+}
+// .card-movie-navigation
+
+.card-movie {
+  -webkit-transition: all ($transition-time * 2) $transition-method;
+  -moz-transition: all ($transition-time * 2) $transition-method;
+  transition: all ($transition-time * 2) $transition-method;
+  background-size: cover;
+  bottom: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: 20;
+
+  &__content {
+    left: 5%;
+    position: absolute;
+    top: 5%;
+  }
+  // &__content
+
+  &__title {
+    font-size: 50px;
+    font-weight: 700;
+    color: $white;
+    line-height: 1;
+    margin-left: -4px;
+    text-transform: uppercase;
+  }
+  // &__title
+}
+// .card-movie
+
+.card-movie--active {
+  opacity: 1;
+  z-index: 25;
+}
+// .card-movie--active
+
+.card-movie--light {
+  background-color: #effdfd;
+
+  [class*='__title'] {
+    color: $white;
+  }
+  // [class*='__title']
+
+}
+// .card-movie--light
+
+.card-movie--dark {
+  background-color: $color-black;
+  color: #fff;
+
+  [class*='__title'] {
+    color: #fff;
+  }
+  // [class*='__title']
+
+}
+// .card-movie--dark
+
+.card-movie--looper {
+  background-image: url('../../dist/img/reklamodawca.png');
+}
+// .card-movie--looper

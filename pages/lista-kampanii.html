@@ -3,30 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>AdminLTE 3 | Widgets</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -64,7 +56,7 @@
   <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/SHOPENEO_LOGO_network.png" alt="Shopeneo Network" class="brand-image">
+      <img src="../dist/img/SHOPENEO_LOGO_network.png" alt="Shopeneo Network" class="brand-image">
     </a>
 
     <!-- Sidebar -->
@@ -72,7 +64,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Łukasz Madej</a>
@@ -89,7 +81,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="../index.html" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Dashboard</p>
             </a>
@@ -102,7 +94,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/moje-kampanie.html" class="nav-link">
+            <a href="moje-kampanie.html" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>Moje kampanie</p>
             </a>
@@ -115,7 +107,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/lista-kampanii.html" class="nav-link">
+            <a href="lista-kampanii.html" class="nav-link active">
               <i class="nav-icon fas fa-list"></i>
               <p>Lista kampanii</p>
             </a>
@@ -177,12 +169,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard</h1>
+            <h1 class="m-0 text-dark">Wszystkie Kampanie</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
+              <li class="breadcrumb-item active">Wszystkie kampanie</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -193,39 +185,97 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-
-        <div class="row">
-          <div class="col-6">
-            <div class="card-movie-wrapper card-movie-wrapper--centered">
-              <div class="card-movie-carousel">
-                <div class="card-movie card-movie--light card-movie--looper card-movie--active">
-                  <div class="card-movie__content">
-                    <div class="card-movie__title">Reklamodawca</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-movie-navigation">
-                <a href="#" type="button">Przejdź dalej</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card-movie-wrapper card-movie-wrapper--centered">
-              <div class="card-movie-carousel">
-                <div class="card-movie card-movie--light card-movie--looper card-movie--active">
-                  <div class="card-movie__content">
-                    <div class="card-movie__title">Wydawca</div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-movie-navigation">
-                <a href="#" type="button">Przejdź dalej</a>
-              </div>
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <div class="float-sm-right float-left">
+              <a class="btn btn-app btn-reload">
+                <i class="fas fa-sync" aria-hidden="true"></i> Odśwież
+              </a>
             </div>
           </div>
         </div>
+        <div class="filter-bar" style="">
+          <form method="post" action="https://app.shopeneo.network/filter" class="form-inline">
+            <input type="hidden" name="_token" value="tHiw0mKXtMLyP99d9LUVkfSPO8UAe3aVEp79EKlR">
+            <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                  <i class="far fa-calendar-alt"></i>
+              </span>
+            </div>
+            <input id="datetime" type="text" class="datepicker form-control float-right" name="datetime" value="07/10/2020 - 07/10/2020">
+          </div>
 
-      </div><!-- /.container-fluid -->
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="period" class="form-control">
+                <option value="all" selected="">Wybierz okres</option>
+                <option value="last_day">Ostatni dzień</option>
+                <option value="last_week">Ostatni tydzień</option>
+                <option value="last_month">Ostatni miesiąc</option>
+                <option value="last_six_months">Ostatnie pół roku</option>
+              </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="cps" class="form-control">
+                <option value="select" selected="">Wybierz CPS</option>
+                <option value="5-10">5 - 10 %</option>
+                <option value="11-20">11 - 20 %</option>
+                <option value="20"> &gt; 20 %</option>
+              </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="cookie" class="form-control">
+                <option value="select" selected="">Wybierz czas</option>
+                <option value="30-60">30 - 60 dni</option>
+                <option value="61-180">61 - 180 dni</option>
+                <option value="180">180 dni</option>
+              </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="xml" class="form-control">
+                <option value="all" selected="">Wszystkie</option>
+                <option value="with_xml">Z XML</option>
+                <option value="without_xml">Bez XML</option>
+              </select>
+            </div>
+
+            <input type="hidden" name="type" value="Campaign">
+            <input type="hidden" name="id" value="advertisercampaigns">
+            <button type="submit" class="btn btn-primary mb-2">Zastosuj</button>
+          </form>
+        </div>
+        <table class="table table-hover mb-0 table-striped display" id="campaigns-datatable" style="width: 100%">
+          <thead class="order-table-header" style="font-size: 15px; text-align: center">
+            <th>Nazwa kampanii</th>
+            <th>URL sklepu</th>
+            <th>URL pliku XML</th>
+            <th>CPS</th>
+            <th>Cookie</th>
+            <th>Kategoria</th>
+            <th>Tagi</th>
+            <th>Action</th>
+          </thead>
+          <tbody style="font-size: 15px;">
+            <tr>
+              <td>c35037f3-7a64</td>
+              <td>c35037f3-7a64</td>
+              <td>c35037f3-7a64</td>
+              <td>c35037f3-7a64</td>
+              <td>c35037f3-7a64</td>
+              <td>c35037f3-7a64</td>
+              <td>c35037f3-7a64</td>
+              <td style="text-align: center">
+                <a class="btn btn-app">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <a class="btn btn-app">
+                  <i class="fas fa-trash"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <!-- /.content -->
   </div>
@@ -244,38 +294,20 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
+<script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="../dist/js/demo.js"></script>
+<script>
+  $('#campaigns-datatable').DataTable({});
+</script>
 </body>
 </html>

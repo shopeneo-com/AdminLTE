@@ -198,9 +198,10 @@ $font-size-xl: ($font-size-base * 2) !default;
 
 // BUTTON
 // --------------------------------------------------------
-$button-default-background-color: $gray-100 !default;
-$button-default-color: #444 !default;
-$button-default-border-color: #ddd !default;
+$button-default-background-color: #1a1a1a !default;
+$button-hover-background-color: #009846 !default
+$button-default-color: #fff !default;
+$button-default-border-color: #1a1a1a !default;
 
 $button-padding-y-xs: .125rem !default;
 $button-padding-x-xs: .25rem !default;

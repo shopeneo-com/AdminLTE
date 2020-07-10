@@ -60,7 +60,7 @@
   @include border-radius(3px);
   background-color: $button-default-background-color;
   border: 1px solid $button-default-border-color;
-  color: $gray-600;
+  color: #fff !important;
   font-size: 12px;
   height: 60px;
   margin: 0 0 10px 10px;
@@ -77,10 +77,11 @@
   > .ion {
     display: block;
     font-size: 20px;
+    color: $white;
   }
 
   &:hover {
-    background-color: $button-default-background-color;
+    background-color: $button-hover-background-color;
     border-color: darken($button-default-border-color, 20%);
     color: $button-default-color;
   }

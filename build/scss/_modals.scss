@@ -38,3 +38,12 @@
     }
   }
 }
+
+.modal-header {
+  background: $primary;
+  color: $white;
+}
+
+.modal-header .close, .modal-header .mailbox-attachment-close {
+  color: $white;
+}

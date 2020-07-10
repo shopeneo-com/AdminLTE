@@ -51,7 +51,7 @@
 
   img {
     height: auto;
-    width: $sidebar-user-image-width;
+    width: 4rem;
   }
 
   .info {
@@ -62,6 +62,10 @@
   .status,
   .dropdown-menu {
     font-size: $font-size-sm;
+  }
+
+  .settings a {
+    padding-right: 10px;
   }
 }
 
@@ -175,7 +179,9 @@
   }
 
   .nav-header {
-    font-size: .9rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
     padding: $nav-link-padding-y;
 
     &:not(:first-of-type) {

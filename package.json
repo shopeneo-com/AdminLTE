@@ -150,5 +150,8 @@
     "stylelint-config-twbs-bootstrap": "^2.0.3",
     "terser": "^4.7.0",
     "vnu-jar": "^20.5.29"
+  },
+  "directories": {
+    "doc": "docs"
   }
 }

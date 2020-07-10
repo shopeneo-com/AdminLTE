@@ -89,3 +89,10 @@ a.text-muted:hover {
     }
   }
 }
+
+// Dropdown hover
+
+.dropdown-item:hover {
+  background: theme-color(primary);
+  color: #fff;
+}

@@ -185,7 +185,96 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-12">
+            <div class="float-sm-right float-left">
+              <a class="btn btn-app btn-reload">
+                <i class="fas fa-sync" aria-hidden="true"></i> Odśwież
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="filter-bar" style="">
+          <form method="post" action="https://app.shopeneo.network/filter" class="form-inline">
+            <input type="hidden" name="_token" value="tHiw0mKXtMLyP99d9LUVkfSPO8UAe3aVEp79EKlR">
+            <div class="input-group mb-2 mr-sm-2">
+              <div class="input-group-prepend">
+              <span class="input-group-text">
+                  <i class="far fa-calendar-alt"></i>
+              </span>
+              </div>
+              <input id="datetime" type="text" class="datepicker form-control float-right" name="datetime" value="07/10/2020 - 07/10/2020">
+            </div>
 
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="period" class="form-control">
+                <option value="all" selected="">Wybierz okres</option>
+                <option value="last_day">Ostatni dzień</option>
+                <option value="last_week">Ostatni tydzień</option>
+                <option value="last_month">Ostatni miesiąc</option>
+                <option value="last_six_months">Ostatnie pół roku</option>
+              </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="cps" class="form-control">
+                <option value="select" selected="">Wybierz CPS</option>
+                <option value="5-10">5 - 10 %</option>
+                <option value="11-20">11 - 20 %</option>
+                <option value="20"> &gt; 20 %</option>
+              </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="cookie" class="form-control">
+                <option value="select" selected="">Wybierz czas</option>
+                <option value="30-60">30 - 60 dni</option>
+                <option value="61-180">61 - 180 dni</option>
+                <option value="180">180 dni</option>
+              </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+              <select name="xml" class="form-control">
+                <option value="all" selected="">Wszystkie</option>
+                <option value="with_xml">Z XML</option>
+                <option value="without_xml">Bez XML</option>
+              </select>
+            </div>
+
+            <input type="hidden" name="type" value="Campaign">
+            <input type="hidden" name="id" value="advertisercampaigns">
+            <button type="submit" class="btn btn-primary mb-2">Zastosuj</button>
+          </form>
+        </div>
+        <table class="table table-hover mb-0 table-striped display" id="campaigns-datatable" style="width: 100%">
+          <thead class="order-table-header" style="font-size: 15px; text-align: center">
+          <th>Nazwa kampanii</th>
+          <th>URL sklepu</th>
+          <th>URL pliku XML</th>
+          <th>CPS</th>
+          <th>Cookie</th>
+          <th>Kategoria</th>
+          <th>Tagi</th>
+          <th>Action</th>
+          </thead>
+          <tbody style="font-size: 15px;">
+          <tr>
+            <td>c35037f3-7a64</td>
+            <td>c35037f3-7a64</td>
+            <td>c35037f3-7a64</td>
+            <td>c35037f3-7a64</td>
+            <td>c35037f3-7a64</td>
+            <td>c35037f3-7a64</td>
+            <td>c35037f3-7a64</td>
+            <td style="text-align: center">
+              <a class="btn btn-app">
+                <i class="fas fa-edit"></i>
+              </a>
+              <a class="btn btn-app">
+                <i class="fas fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </section>
     <!-- /.content -->

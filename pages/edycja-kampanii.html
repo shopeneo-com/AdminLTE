@@ -69,7 +69,7 @@
         <div class="info">
           <a href="#" class="d-block">Łukasz Madej</a>
           <div class="settings">
-            <a href="#"><span class="fas fa-user-cog"></span></a>
+            <a href="profil.html"><span class="fas fa-user-cog"></span></a>
             <a href="#"><span class="fas fa-sign-out-alt"></span></a>
           </div>
         </div>
@@ -94,7 +94,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="moje-kampanie.html" class="nav-link">
+            <a href="pages/moje-kampanie.html" class="nav-link active">
               <i class="nav-icon fas fa-list"></i>
               <p>Moje kampanie</p>
             </a>
@@ -107,7 +107,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="lista-kampanii.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>Lista kampanii</p>
             </a>
@@ -120,7 +120,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="wizyty.html" class="nav-link active">
+            <a href="wizyty.html" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>Wizyty</p>
             </a>
@@ -169,12 +169,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Wizyty</h1>
+            <h1 class="m-0 text-dark">Edycja kampanii</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Wizyty</li>
+              <li class="breadcrumb-item active">Edycja kampanii</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -187,29 +187,79 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <div class="float-sm-right float-left">
-              <a class="btn btn-app btn-reload">
-                <i class="fas fa-sync" aria-hidden="true"></i> Odśwież
-              </a>
+            <div class="card">
+              <div class="card-body">
+                <form class="form-row" method="post" action="https://app.shopeneo.network/admin/user/1/edit">
+                  <h3 class="col-sm-12">Edit</h3>
+                  <input type="hidden" name="_token" value="JczORIdpc2UNJsnNKdp0xjyn20v1ymnzaBwkLPMN">
+                  <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control " id="name" name="name" placeholder="Enter user name..." value="Test Admin" autocomplete="off">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="cookie">Cookie expires</label>
+                    <input type="number" class="form-control " id="cookie" name="cookie" autocomplete="off">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="cps">CPS [%]</label>
+                    <input type="number" class="form-control " id="cps" name="cps" autocomplete="off">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="url">Shop URL</label>
+                    <input type="text" class="form-control " id="url" name="url" autocomplete="off">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="crypto">Płatność kryptowalutami</label>
+                    <select id="crypto" name="crypto" class="form-control ">
+                      <option value="0" selected="">Nie</option>
+                      <option value="1">Tak</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="waluta">Waluta kampanii</label>
+                    <select id="waluta" name="waluta" class="form-control ">
+                      <option value="0" selected="">PLN</option>
+                      <option value="1">GBP</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="language">Język kampanii</label>
+                    <select id="language" name="language" class="form-control ">
+                      <option value="0" selected="">PL</option>
+                      <option value="1">EN</option>
+                    </select>
+                  </div>
+                  <h3 class="col-sm-12">Kategorie</h3>
+                  <div class="form-group col-md-4">
+                    <label for="category">Nazwa kategorii</label>
+                    <input type="text" class="form-control " id="category" name="category" autocomplete="off">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="tag">Dodaj tag</label>
+                    <input type="text" class="form-control " id="tag" name="tag" autocomplete="off">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="edittag">Edytuj tagi</label>
+                    <input type="text" class="form-control " id="edittag" name="edittag" autocomplete="off">
+                  </div>
+                  <h3 class="col-sm-12">Opis i regulamin</h3>
+                  <div class="form-group col-md-12">
+                    <label for="description">Description</label>
+                    <textarea class="form-control " id="description" name="description"></textarea>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="terms">Terms</label>
+                    <textarea class="form-control " id="terms" name="terms"></textarea>
+                  </div>
+                  <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary float-right">Aktualizuj</button>
+                    <button type="submit" class="btn btn-primary">Anuluj</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-        <table class="table table-hover mb-0 table-striped display" id="campaigns-datatable" style="width: 100%">
-          <thead class="order-table-header" style="font-size: 15px;">
-          <th>ID</th>
-          <th>Utworzony</th>
-          <th>Zaktualizowany</th>
-          <th>Sesje</th>
-          </thead>
-          <tbody style="font-size: 15px;">
-          <tr>
-            <td>7469b1e4-b777-4734-81e0-0e7818c2a77a</td>
-            <td>2020-07-13 21:52:19</td>
-            <td>2020-07-13 21:52:19</td>
-            <td>cb93b995-6f83-4ff3-9d8e-66c8f4eec46a</td>
-          </tr>
-          </tbody>
-        </table>
       </div>
     </section>
     <!-- /.content -->
@@ -241,8 +291,5 @@
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
-<script>
-  $('#campaigns-datatable').DataTable({});
-</script>
 </body>
 </html>

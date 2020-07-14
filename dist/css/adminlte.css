@@ -31228,19 +31228,19 @@ label {
   margin-bottom: 0;
 }
 
-.form-container .field-container:first-of-type {
+.form-container .field-container:first-of-type, .form-container-second .field-container:first-of-type {
   grid-area: name;
 }
 
-.form-container .field-container:nth-of-type(2) {
+.form-container .field-container:nth-of-type(2), .form-container-second .field-container:nth-of-type(2) {
   grid-area: number;
 }
 
-.form-container .field-container:nth-of-type(3) {
+.form-container .field-container:nth-of-type(3), .form-container-second .field-container:nth-of-type(3) {
   grid-area: expiration;
 }
 
-.form-container .field-container:nth-of-type(4) {
+.form-container .field-container:nth-of-type(4), .form-container-second .field-container:nth-of-type(4) {
   grid-area: security;
 }
 
@@ -31259,6 +31259,16 @@ label {
   grid-template-rows: 90px 90px 90px;
   grid-template-areas: "name name" "number number" "expiration security";
   max-width: 400px;
+  padding: 20px;
+  color: #707070;
+}
+
+.form-container-second {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 90px 90px 90px;
+  grid-template-areas: "name name" "number number" "expiration security";
   padding: 20px;
   color: #707070;
 }

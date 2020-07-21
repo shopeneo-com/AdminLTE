@@ -169,12 +169,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Wszystkie Kampanie</h1>
+            <h1 class="m-0 text-dark">Modal</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Wszystkie kampanie</li>
+              <li class="breadcrumb-item active">Modal</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -185,113 +185,114 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-12">
-            <div class="float-sm-right float-left">
-              <a class="btn btn-app btn-reload">
-                <i class="fas fa-sync" aria-hidden="true"></i> Odśwież
-              </a>
+        <div class="col-xs-12 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#primaryModal" data-backdrop="true">
+                Primary modal
+              </button>
+
+              <div class="modal  modal-primary fade" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                      animi, id est laborum et dolorum fuga.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#infoModal">Info modal</button>
+
+              <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content modal-info">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                      animi, id est laborum et dolorum fuga.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-info" data-dismiss="modal">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#successModal">Success modal</button>
+
+              <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="Success Modal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content modal-success">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                      animi, id est laborum et dolorum fuga.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-dismiss="modal">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#warningModal">Warning modal</button>
+
+              <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="Warning Modal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content modal-warning">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                      animi, id est laborum et dolorum fuga.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-warning" data-dismiss="modal">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#dangerModal">Danger modal</button>
+
+              <div class="modal fade" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="Danger Modal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content modal-danger">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                      animi, id est laborum et dolorum fuga.
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="filter-bar" style="">
-          <form method="post" action="https://app.shopeneo.network/filter" class="form-inline">
-            <input type="hidden" name="_token" value="tHiw0mKXtMLyP99d9LUVkfSPO8UAe3aVEp79EKlR">
-            <div class="input-group mb-2 mr-sm-2">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                  <i class="far fa-calendar-alt"></i>
-              </span>
-            </div>
-            <input id="datetime" type="text" class="datepicker form-control float-right" name="datetime" value="07/10/2020 - 07/10/2020">
-          </div>
-
-            <div class="input-group mb-2 mr-sm-2">
-              <select name="period" class="form-control">
-                <option value="all" selected="">Wybierz okres</option>
-                <option value="last_day">Ostatni dzień</option>
-                <option value="last_week">Ostatni tydzień</option>
-                <option value="last_month">Ostatni miesiąc</option>
-                <option value="last_six_months">Ostatnie pół roku</option>
-              </select>
-            </div>
-            <div class="input-group mb-2 mr-sm-2">
-              <select name="cps" class="form-control">
-                <option value="select" selected="">Wybierz CPS</option>
-                <option value="5-10">5 - 10 %</option>
-                <option value="11-20">11 - 20 %</option>
-                <option value="20"> &gt; 20 %</option>
-              </select>
-            </div>
-            <div class="input-group mb-2 mr-sm-2">
-              <select name="cookie" class="form-control">
-                <option value="select" selected="">Wybierz czas</option>
-                <option value="30-60">30 - 60 dni</option>
-                <option value="61-180">61 - 180 dni</option>
-                <option value="180">180 dni</option>
-              </select>
-            </div>
-            <div class="input-group mb-2 mr-sm-2">
-              <select name="xml" class="form-control">
-                <option value="all" selected="">Wszystkie</option>
-                <option value="with_xml">Z XML</option>
-                <option value="without_xml">Bez XML</option>
-              </select>
-            </div>
-
-            <input type="hidden" name="type" value="Campaign">
-            <input type="hidden" name="id" value="advertisercampaigns">
-            <button type="submit" class="btn btn-primary mb-2">Zastosuj</button>
-          </form>
-        </div>
-        <table class="table table-hover mb-0 table-striped display" id="campaigns-datatable" style="width: 100%">
-          <thead class="order-table-header" style="font-size: 15px;">
-            <th>Nazwa kampanii</th>
-            <th>Data utworzenia kampanii</th>
-            <th>Cookie</th>
-            <th>CPS</th>
-            <th>Status</th>
-            <th>Feed produktowy</th>
-            <th>Kategoria</th>
-            <th>Tagi</th>
-            <th></th>
-          </thead>
-          <tbody style="font-size: 15px;">
-            <tr>
-              <td>
-                <p>Andreanne Reilly</p>
-                <span class="campaign-detail">
-                  <span class="tooltiptext">Kopiuj</span>
-                  <i class="far fa-file-code" data-clipboard-target="#reflink"></i>
-                </span>
-                <span class="campaign-detail">
-                  <span class="tooltiptext">Kopiuj</span>
-                  <i class="fas fa-rss-square" data-clipboard-target="#feed"></i>
-                </span>
-                <span class="campaign-detail">
-                  <span class="tooltiptext">Przejdź</span>
-                  <a href="" target="_blank"><i class="fas fa-tags"></i></a>
-                </span>
-                <span class="campaign-detail">
-                  <span class="tooltiptext">Przejdź</span>
-                  <a href="" target="_blank"><i class="fas fa-sitemap"></i></a>
-                </span>
-              </td>
-              <td>2020-07-13</td>
-              <td>25 Dni</td>
-              <td>0.71 %</td>
-              <td></td>
-              <td><span class="badge badge-success">Tak</span></td>
-              <td></td>
-              <td></td>
-              <td>
-                <a class="btn btn-app" href="szczegoly.html">
-                  Szczegóły
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </section>
     <!-- /.content -->
@@ -314,19 +315,9 @@
 <script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- DataTables -->
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
-<!-- Clipboard -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
-<script>
-  $('#campaigns-datatable').DataTable({});
-</script>
 </body>
 </html>

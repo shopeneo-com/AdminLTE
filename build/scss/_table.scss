@@ -108,3 +108,33 @@
 .table {
   margin: 1rem 0 !important;
 }
+
+.campaign-detail i {
+  font-size: 20px;
+  padding-right: 15px;
+  cursor: pointer;
+  color: $primary;
+}
+
+.campaign-detail .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 35%;
+  left: 5%;
+  opacity: 0;
+  transition: opacity .3s;
+  font-size: 12px;
+  margin-left: -35px;
+}
+
+.campaign-detail:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

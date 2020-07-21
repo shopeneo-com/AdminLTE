@@ -1,0 +1,59 @@
+$default: #ddd;
+$default-dark: #9a9a9a;
+$primary: #009846;
+$primary-dark: #ffffff;
+$info: #058ed9;
+$info-dark: #0471ad;
+$success: #49a53b;
+$success-dark: #3a842f;
+$warning: #d9461d ;
+$warning-dark: #ad3817;
+$danger: #8c0000;
+$danger-dark: #700000;
+
+@mixin modal-background($color,$dark){
+  .modal-content{
+    background: $dark;
+  }
+
+  border: 2px solid $color;
+
+  .modal-header{
+    color: #fff;
+    background-color: $color;
+    button{
+      color: #fff;
+      text-shadow: none;
+      transition: all .3s ease-in-out;
+      &:hover{
+        color: $dark;
+        text-shadow: none;
+      }
+    }
+  }
+  .modal-body{
+    span{
+      color: $color;
+    }
+  }
+}
+
+.modal-primary{
+  @include modal-background($primary, $primary-dark);
+}
+
+.modal-info{
+  @include modal-background($info, $info-dark);
+}
+
+.modal-success{
+  @include modal-background($success, $success-dark);
+}
+
+.modal-warning{
+  @include modal-background($warning, $warning-dark);
+}
+
+.modal-danger{
+  @include modal-background($danger, $danger-dark);
+}

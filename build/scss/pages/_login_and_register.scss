@@ -42,6 +42,12 @@
   padding: 20px;
 
   .input-group {
+    .input-group-append {
+      height: 38px;
+      top: 3px;
+      position: relative;
+    }
+
     .form-control {
       border-right: 0;
 
@@ -83,6 +89,10 @@
       transition: $input-transition;
     }
   }
+}
+
+#remember {
+  width: 12%;
 }
 
 .login-box-msg,

@@ -31777,7 +31777,7 @@ input {
 .blog-card .description h1 {
   line-height: 1;
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .blog-card .description .read-more {
@@ -31803,6 +31803,7 @@ input {
   right: 100%;
   bottom: 0;
   width: 0;
+  top: 26px;
 }
 
 .blog-card:hover .details {
@@ -31843,6 +31844,14 @@ input {
     left: inherit;
     right: -10px;
     transform: skew(3deg);
+  }
+
+  .blog-card .description h1 {
+    font-size: 0.8rem;
+  }
+
+  .blog-card .description .read-more a {
+    padding: 20px 0 0;
   }
 }
 

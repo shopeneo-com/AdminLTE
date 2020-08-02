@@ -31994,4 +31994,15 @@ input {
 .modal-danger .modal-body span {
   color: #8c0000;
 }
+
+.filter-action.collapsed:before {
+  content: 'Pokaż opcje';
+  display: block;
+}
+
+.filter-action:before {
+  content: 'Zwiń opcje';
+  display: block;
+}
+
 /*# sourceMappingURL=adminlte.css.map */

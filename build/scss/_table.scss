@@ -110,31 +110,43 @@
 }
 
 .campaign-detail i {
-  font-size: 20px;
-  padding-right: 15px;
+  font-size: 16px;
+  padding-right: 10px;
   cursor: pointer;
   color: $primary;
 }
 
-.campaign-detail .tooltiptext {
-  visibility: hidden;
-  width: 100px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 35%;
-  left: 5%;
-  opacity: 0;
-  transition: opacity .3s;
-  font-size: 12px;
-  margin-left: -35px;
+.filter-action {
+  background: transparent;
+  color: #1a1a1a;
+  border: none;
 }
 
-.campaign-detail:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+.filter-action:hover {
+  background: transparent;
+  border: none;
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.filter-action.collapsed:before {
+  content: 'pokaż opcje';
+  display: block;
+}
+
+.filter-action:before {
+  content: 'zwiń opcje';
+  display: block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.tooltip-table {
+  color: #ffffff;
+}
+
+.popover-mark {
+  margin: 6px;
 }

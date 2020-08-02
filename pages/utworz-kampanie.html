@@ -61,19 +61,6 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Łukasz Madej</a>
-          <div class="settings">
-            <a href="profil.html"><span class="fas fa-user-cog"></span></a>
-            <a href="#"><span class="fas fa-sign-out-alt"></span></a>
-          </div>
-        </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -182,56 +169,150 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-12">
-            <div class="card">
-              <div class="card-body">
-                <form class="form-row" method="post" action="https://app.shopeneo.network/admin/user/1/edit">
-                  <h3 class="col-sm-12">Stwórz kampanię</h3>
-                  <input type="hidden" name="_token" value="JczORIdpc2UNJsnNKdp0xjyn20v1ymnzaBwkLPMN">
-                  <div class="form-group col-md-6">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control " id="name" name="name" placeholder="Enter user name..." value="Test Admin" autocomplete="off">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="cookie">Cookie expires</label>
-                    <input type="number" class="form-control " id="cookie" name="cookie" autocomplete="off">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="cps">CPS [%]</label>
-                    <input type="number" class="form-control " id="cps" name="cps" autocomplete="off">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="url">Shop URL</label>
-                    <input type="text" class="form-control " id="url" name="url" autocomplete="off">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="xml">XML URL</label>
-                    <input type="text" class="form-control " id="xml" name="xml" autocomplete="off">
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label for="description">Description</label>
-                    <textarea class="form-control " id="description" name="description"></textarea>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <label for="terms">Terms</label>
-                    <textarea class="form-control " id="terms" name="terms"></textarea>
-                  </div>
-                  <div class="col-sm-12">
-                    <button type="submit" class="btn btn-primary float-right">Zapisz</button>
-                    <button type="submit" class="btn btn-primary">Anuluj</button>
-                  </div>
-                </form>
+      <div class="container-fluid" id="grad1">
+        <div class="row justify-content-center mt-0">
+          <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+              <h2><strong>Stwórz kampanię</strong></h2>
+              <div class="row">
+                <div class="col-md-12 mx-0">
+                  <form id="msform">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                      <li class="active" id="account"><strong>Wybierz pakiet</strong></li>
+                      <li id="personal"><strong>Informacje</strong></li>
+                      <li id="payment"><strong>Opisy</strong></li>
+                      <li id="confirm"><strong>Płatność</strong></li>
+                    </ul> <!-- fieldsets -->
+                    <fieldset>
+                      <div class="form-card">
+                        <div class="row">
+                          <div class="col text-center">
+                            <label class="toggler toggler--is-active" id="filt-monthly">Monthly</label>
+                            <div class="toggle">
+                              <input type="checkbox" id="switcher" class="check">
+                              <b class="b switch"></b>
+                            </div>
+                            <label class="toggler" id="filt-yearly">Yearly</label>
+                          </div>
+                        </div>
+                        <div id="monthly" class="row mt-5">
+                          <div class="col-lg-6">
+                            <div class="card p-5 shadow">
+                              <h5 class="pricing__title">Standard</h5>
+                              <h2 class="pricing__price">
+                                <span class="pricing__price--currency">ZŁ</span>
+                                <span class="pricing__price--value">14,99</span>
+                                <span class="pricing__price--duration">msc</span>
+                              </h2>
+                              <p class="pricing__element">Single Access</p>
+                              <p class="pricing__element">With Ads</p>
+                              <p class="pricing__element">48h Support</p>
+                              <a class="pricing__btn btn btn-primary" href="#">Wybierz</a>
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <div class="card p-5 shadow">
+                              <h5 class="pricing__title">PRO</h5>
+                              <h2 class="pricing__price">
+                                <span class="pricing__price--currency">ZŁ</span>
+                                <span class="pricing__price--value">24,99</span>
+                                <span class="pricing__price--duration">msc</span>
+                              </h2>
+                              <p class="pricing__element">Single Access</p>
+                              <p class="pricing__element">With Ads</p>
+                              <p class="pricing__element">48h Support</p>
+                              <a class="pricing__btn btn btn-primary" href="#">Wybierz</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="yearly" class="hide row mt-5">
+                          <div class="col-lg-6">
+                            <div class="card p-5 shadow">
+                              <h5 class="pricing__title">Standard</h5>
+                              <h2 class="pricing__price">
+                                <span class="pricing__price--currency">ZŁ</span>
+                                <span class="pricing__price--value">159,99</span>
+                                <span class="pricing__price--duration">rok</span>
+                              </h2>
+                              <p class="pricing__element">Single Access</p>
+                              <p class="pricing__element">With Ads</p>
+                              <p class="pricing__element">48h Support</p>
+                              <a class="pricing__btn btn btn-primary" href="#">Wybierz</a>
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <div class="card p-5 shadow">
+                              <h5 class="pricing__title">PRO</h5>
+                              <h2 class="pricing__price">
+                                <span class="pricing__price--currency">ZŁ</span>
+                                <span class="pricing__price--value">259,99</span>
+                                <span class="pricing__price--duration">rok</span>
+                              </h2>
+                              <p class="pricing__element">Single Access</p>
+                              <p class="pricing__element">With Ads</p>
+                              <p class="pricing__element">48h Support</p>
+                              <a class="pricing__btn btn btn-primary" href="#">Wybierz</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="button" name="next" class="next btn btn-primary" value="Next Step" />
+                    </fieldset>
+                    <fieldset>
+                      <div class="form-card">
+                        <input type="hidden" name="_token" value="JczORIdpc2UNJsnNKdp0xjyn20v1ymnzaBwkLPMN">
+                        <div class="form-group col-md-12">
+                          <label for="name">Name</label>
+                          <input type="text" class="form-control " id="name" name="name" placeholder="Enter user name..." value="Test Admin" autocomplete="off">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="cookie">Cookie expires</label>
+                          <input type="number" class="form-control " id="cookie" name="cookie" autocomplete="off">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="cps">CPS [%]</label>
+                          <input type="number" class="form-control " id="cps" name="cps" autocomplete="off">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="url">Shop URL</label>
+                          <input type="text" class="form-control " id="url" name="url" autocomplete="off">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="xml">XML URL</label>
+                          <input type="text" class="form-control " id="xml" name="xml" autocomplete="off">
+                        </div>
+                      </div>
+                      <input type="button" name="next" class="next btn btn-primary" value="Next Step" />
+                    </fieldset>
+                    <fieldset>
+                      <div class="form-card">
+                        <div class="form-group col-md-12">
+                          <label for="description">Description</label>
+                          <textarea class="form-control " id="description" name="description"></textarea>
+                        </div>
+                        <div class="form-group col-md-12">
+                          <label for="terms">Terms</label>
+                          <textarea class="form-control " id="terms" name="terms"></textarea>
+                        </div>
+                      </div>
+                      <input type="button" name="make_payment" class="next btn btn-primary" value="Confirm" />
+                    </fieldset>
+                    <fieldset>
+                      <div class="form-card">
+
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- /.content -->
+
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -260,5 +341,102 @@
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<script>
+  $(document).ready(function(){
+
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var opacity;
+
+    $(".next").click(function(){
+
+      current_fs = $(this).parent();
+      next_fs = $(this).parent().next();
+
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+      next_fs.show();
+      current_fs.animate({opacity: 0}, {
+        step: function(now) {
+          opacity = 1 - now;
+
+          current_fs.css({
+            'display': 'none',
+            'position': 'relative'
+          });
+          next_fs.css({'opacity': opacity});
+        },
+        duration: 600
+      });
+    });
+
+    $(".previous").click(function(){
+
+      current_fs = $(this).parent();
+      previous_fs = $(this).parent().prev();
+
+      $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+      previous_fs.show();
+
+      current_fs.animate({opacity: 0}, {
+        step: function(now) {
+          opacity = 1 - now;
+
+          current_fs.css({
+            'display': 'none',
+            'position': 'relative'
+          });
+          previous_fs.css({'opacity': opacity});
+        },
+        duration: 600
+      });
+    });
+
+    $('.radio-group .radio').click(function(){
+      $(this).parent().find('.radio').removeClass('selected');
+      $(this).addClass('selected');
+    });
+
+    $(".submit").click(function(){
+      return false;
+    })
+
+  });
+
+  $(function () {
+    if ( $( ".toggler" ).hasClass( "toggler--is-active" ) ) {
+
+      var e = document.getElementById("filt-monthly"),
+        d = document.getElementById("filt-yearly"),
+        t = document.getElementById("switcher"),
+        m = document.getElementById("monthly"),
+        y = document.getElementById("yearly");
+
+      e.addEventListener("click", function(){
+        t.checked = false;
+        e.classList.add("toggler--is-active");
+        d.classList.remove("toggler--is-active");
+        m.classList.remove("hide");
+        y.classList.add("hide");
+      });
+
+      d.addEventListener("click", function(){
+        t.checked = true;
+        d.classList.add("toggler--is-active");
+        e.classList.remove("toggler--is-active");
+        m.classList.add("hide");
+        y.classList.remove("hide");
+      });
+
+      t.addEventListener("click", function(){
+        d.classList.toggle("toggler--is-active");
+        e.classList.toggle("toggler--is-active");
+        m.classList.toggle("hide");
+        y.classList.toggle("hide");
+      })
+
+    }
+  })
+</script>
 </body>
 </html>

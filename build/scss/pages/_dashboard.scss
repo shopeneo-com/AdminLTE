@@ -111,4 +111,28 @@
       }
     }
   }
+
+  @media (max-width: 640px) {
+    .description {
+      flex-basis: 100%;
+      .read-more {
+        font-size: 0.8rem;
+        a {
+          padding: 20px 0 0 0 !important;
+          &:after {
+            top: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .description {
+      flex-basis: 100%;
+      .read-more {
+        font-size: 1rem;
+      }
+    }
+  }
 }

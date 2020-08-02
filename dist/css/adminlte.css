@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  *   AdminLTE v3.1.0-pre
  *   Author: Colorlib
@@ -19074,33 +19075,45 @@ html.maximized-card {
 }
 
 .campaign-detail i {
-  font-size: 20px;
-  padding-right: 15px;
+  font-size: 16px;
+  padding-right: 10px;
   cursor: pointer;
   color: #009846;
 }
 
-.campaign-detail .tooltiptext {
-  visibility: hidden;
-  width: 100px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 35%;
-  left: 5%;
-  opacity: 0;
-  transition: opacity .3s;
-  font-size: 12px;
-  margin-left: -35px;
+.filter-action {
+  background: transparent;
+  color: #1a1a1a;
+  border: none;
 }
 
-.campaign-detail:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+.filter-action:hover {
+  background: transparent;
+  border: none;
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.filter-action.collapsed:before {
+  content: 'pokaż opcje';
+  display: block;
+}
+
+.filter-action:before {
+  content: 'zwiń opcje';
+  display: block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.tooltip-table {
+  color: #ffffff;
+}
+
+.popover-mark {
+  margin: 6px;
 }
 
 .carousel-control.left, .carousel-control.right {
@@ -31777,7 +31790,7 @@ input {
 .blog-card .description h1 {
   line-height: 1;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .blog-card .description .read-more {
@@ -31803,7 +31816,6 @@ input {
   right: 100%;
   bottom: 0;
   width: 0;
-  top: 26px;
 }
 
 .blog-card:hover .details {
@@ -31845,13 +31857,31 @@ input {
     right: -10px;
     transform: skew(3deg);
   }
+}
 
-  .blog-card .description h1 {
+@media (max-width: 640px) {
+  .blog-card .description {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .blog-card .description .read-more {
     font-size: 0.8rem;
   }
-
   .blog-card .description .read-more a {
-    padding: 20px 0 0;
+    padding: 20px 0 0 0 !important;
+  }
+  .blog-card .description .read-more a:after {
+    top: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .blog-card .description {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .blog-card .description .read-more {
+    font-size: 1rem;
   }
 }
 
@@ -31995,14 +32025,255 @@ input {
   color: #8c0000;
 }
 
-.filter-action.collapsed:before {
-  content: 'Pokaż opcje';
-  display: block;
+#msform {
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
 }
 
-.filter-action:before {
-  content: 'Zwiń opcje';
-  display: block;
+#msform fieldset .form-card {
+  background: white;
+  border: 0 none;
+  border-radius: 0px;
+  padding: 20px 40px 30px 40px;
+  box-sizing: border-box;
+  width: 94%;
+  margin: 0 3% 20px 3%;
+  position: relative;
 }
 
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+#msform fieldset .form-card {
+  text-align: left;
+  color: #9E9E9E;
+}
+
+select.list-dt {
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 2px 5px 3px 5px;
+  margin: 2px;
+}
+
+select.list-dt:focus {
+  border-bottom: 2px solid #009846;
+}
+
+.card {
+  z-index: 0;
+  border: none;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.fs-title {
+  font-size: 25px;
+  color: #2C3E50;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+}
+
+#progressbar .active {
+  color: #000000;
+}
+
+#progressbar li {
+  list-style-type: none;
+  font-size: 12px;
+  width: 25%;
+  float: left;
+  position: relative;
+}
+
+#progressbar #account:before {
+  content: "";
+}
+
+#progressbar #personal:before {
+  content: "";
+}
+
+#progressbar #payment:before {
+  content: "";
+}
+
+#progressbar #confirm:before {
+  content: "";
+}
+
+#progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
+}
+
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #009846;
+}
+
+.next {
+  max-width: 200px;
+}
+
+/* Pricing
+-------------------------------------------------------------- */
+.pricing {
+  text-align: center;
+}
+
+.toggler--is-active {
+  color: #009846 !important;
+}
+
+.toggler {
+  color: #aaa;
+  transition: .2s;
+  font-weight: bold;
+}
+
+.toggle, .toggler {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+  font-size: 1.1rem;
+}
+
+.toggle {
+  position: relative;
+  width: 80px;
+  height: 35px;
+  border-radius: 100px;
+  background-color: #009846;
+  overflow: hidden;
+  box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+.check {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 6;
+}
+
+.check:checked ~ .switch {
+  right: 2px;
+  left: 57.5%;
+  transition: 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-property: left, right;
+  transition-delay: .08s, 0s;
+}
+
+.switch {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  right: 57.5%;
+  background-color: #fff;
+  border-radius: 36px;
+  z-index: 1;
+  transition: 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-property: left, right;
+  transition-delay: 0s, .08s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hide {
+  display: none;
+}
+
+.pricing__title {
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.pricing__price {
+  font-size: 60px;
+  font-weight: 800;
+  color: #009846 !important;
+}
+
+.pricing__price--currency {
+  display: inline-block;
+  margin-top: 10px;
+  vertical-align: top;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #009846;
+}
+
+.pricing__price--value {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.pricing__price--duration {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #009846;
+  text-transform: uppercase;
+}
+
+.pricing__price--duration::before {
+  content: '/';
+  margin-right: 2px;
+}
+
+.pricing__btn {
+  margin: 0 auto;
+}
+
+.pricing__element {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
 /*# sourceMappingURL=adminlte.css.map */

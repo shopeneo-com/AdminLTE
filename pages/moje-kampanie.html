@@ -61,19 +61,6 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Łukasz Madej</a>
-          <div class="settings">
-            <a href="profil.html"><span class="fas fa-user-cog"></span></a>
-            <a href="#"><span class="fas fa-sign-out-alt"></span></a>
-          </div>
-        </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -261,7 +248,7 @@
                 <i class="fas fa-sync" aria-hidden="true"></i> Odśwież
               </a>
 
-              <a class="btn btn-app btn-add" href="platnosc.html">
+              <a class="btn btn-app btn-add" href="utworz-kampanie.html">
                 <i class="fas fa-plus-square"></i> Utwórz kampanię
               </a>
             </div>
@@ -295,6 +282,7 @@
                 <option value="11-20">11 - 20 %</option>
                 <option value="20"> &gt; 20 %</option>
               </select>
+              <a href="#" class="popover-mark" tabindex="0" data-toggle="popover" data-trigger="focus" data-popover-content="#a1"><i class="fa fa-question-circle"></i></a>
             </div>
             <div class="input-group mb-2 mr-sm-2">
               <select name="cookie" class="form-control">
@@ -314,12 +302,14 @@
 
             <input type="hidden" name="type" value="Campaign">
             <input type="hidden" name="id" value="advertisercampaigns">
+            <button type="button" class="btn btn-default mb-2 filter-action" data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapse">
+            </button>
             <button type="submit" class="btn btn-primary mb-2">Zastosuj</button>
           </form>
         </div>
         <table class="table table-hover mb-0 table-striped display" id="campaigns-datatable" style="width: 100%">
           <thead class="order-table-header" style="font-size: 15px;">
-            <th>Nazwa kampanii</th>
+            <th>Nazwa kampanii <a href="#" class="tooltip-table" tabindex="0" data-toggle="popover" data-trigger="focus" data-popover-content="#a1"><i class="fa fa-question-circle"></i></a></th>
             <th>URL sklepu</th>
             <th>URL pliku XML</th>
             <th>CPS</th>
@@ -330,7 +320,27 @@
           </thead>
           <tbody style="font-size: 15px;">
             <tr>
-              <td>c35037f3-7a64</td>
+              <td>
+                <p>c35037f3-7a64</p>
+                <span class="campaign-detail">
+                  <input type="hidden" value="reflink to copy" id="reflink" />
+                  <i class="far fa-file-code" data-clipboard-target="#reflink"></i>
+                </span>
+                <span class="campaign-detail">
+                  <input type="hidden" value="feed to copy" id="feed" />
+                  <i class="fas fa-rss-square" data-clipboard-target="#feed"></i>
+                </span>
+                <span class="campaign-detail">
+                  <a href="#" class="tooltip-table">
+                    <i class="fas fa-tags"></i>
+                  </a>
+                </span>
+                <span class="campaign-detail">
+                  <a href="#" class="tooltip-table">
+                    <i class="fas fa-images"></i>
+                  </a>
+                </span>
+              </td>
               <td>c35037f3-7a64</td>
               <td>c35037f3-7a64</td>
               <td>c35037f3-7a64</td>
@@ -348,6 +358,14 @@
             </tr>
           </tbody>
         </table>
+        <div id="a1" class="hidden">
+          <div class="popover-heading">This is the heading for #2</div>
+
+          <div class="popover-body">This is the body for #2<br>
+            With <b>html</b> content
+            <a href="https://google.com">Test</a>
+          </div>
+        </div>
       </div>
     </section>
     <!-- /.content -->
@@ -380,7 +398,23 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 <script>
-  $('#campaigns-datatable').DataTable({});
+  $('#campaigns-datatable').DataTable({
+    responsive: true
+  });
+
+  $(function(){
+    $("[data-toggle=popover]").popover({
+      html : true,
+      content: function() {
+        var content = $(this).attr("data-popover-content");
+        return $(content).children(".popover-body").html();
+      },
+      title: function() {
+        var title = $(this).attr("data-popover-content");
+        return $(title).children(".popover-heading").html();
+      }
+    });
+  });
 </script>
 </body>
 </html>
